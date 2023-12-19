@@ -8,4 +8,33 @@
   min-height: 500px;
   border-radius: 4px;
   background-color: #87C4FF;
+  padding: 7px;
+}
+
+.todo-form {
+  margin-top: 0.7em;
+}
+
+.add-input {
+  width: 200px;
+  margin-right: 1.5em;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 3px dotted white;
+  background-color: transparent;
+}
+
+.add-btn {
+  font-size: 12px;
+  background-color: yellow;
+  color: black;
+  padding: 7px;
+  border: none;
+  outline: none;
+}
+
+.add-btn:hover {
+  border: none;
+  outline: none;
 }
