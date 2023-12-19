@@ -12,17 +12,18 @@
 }
 
 .todo-form {
-  margin-top: 0.7em;
+  margin-top: 0.3em;
 }
 
 .add-input {
   width: 200px;
-  margin-right: 1.5em;
+  margin-right: 0.7em;
   padding: 10px;
   border: none;
   outline: none;
   border-bottom: 3px dotted white;
   background-color: transparent;
+  font-size: 20px;
 }
 
 .add-btn {
