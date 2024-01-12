@@ -39,3 +39,12 @@
   border: none;
   outline: none;
 }
+
+.todo {
+  text-align: left;
+  margin-top: 0.5em;
+  margin-left: 1.3em;
+  font-size: medium;
+  color: navy;
+  font-weight: bold;
+}

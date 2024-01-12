@@ -31,8 +31,8 @@ function App() {
         </form>
         {todos &&
           todos.map((todo, index) => (
-            <div key={index}>
-              {index + 1 + "."} {todo}
+            <div key={index} className="todo">
+              &bull; {todo}
             </div>
           ))}
       </div>
