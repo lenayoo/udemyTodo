@@ -10,6 +10,7 @@ function App() {
   };
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
+    if (inputText === "") return;
     setTodos((prevTodos) => [...prevTodos, inputText]);
     setInputText("");
   };
@@ -31,8 +32,11 @@ function App() {
         </form>
         {todos &&
           todos.map((todo, index) => (
-            <div key={index} className="todo">
-              &bull; {todo}
+            <div className="todoform">
+              <div key={index} className="todo">
+                &bull; {todo}
+              </div>
+              <div className="edit-btn">edit</div>
             </div>
           ))}
       </div>

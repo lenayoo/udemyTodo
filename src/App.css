@@ -43,8 +43,25 @@
 .todo {
   text-align: left;
   margin-top: 0.5em;
-  margin-left: 1.3em;
   font-size: medium;
   color: navy;
   font-weight: bold;
+}
+
+.edit-btn {
+  font-size: 12px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 4px;
+  margin-bottom: 0.7em;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.todoform {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 7px;
 }
