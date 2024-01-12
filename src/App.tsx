@@ -29,7 +29,12 @@ function App() {
             add
           </button>
         </form>
-        {todos && todos.map((todo, index) => <div key={index}>{todo}</div>)}
+        {todos &&
+          todos.map((todo, index) => (
+            <div key={index}>
+              {index + 1 + "."} {todo}
+            </div>
+          ))}
       </div>
     </>
   );
