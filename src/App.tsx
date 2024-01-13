@@ -15,6 +15,10 @@ function App() {
     setInputText("");
   };
 
+  const edithandler = (index: number) => {
+    console.log("edit handler", index);
+  };
+
   console.log(todos);
   return (
     <>
@@ -36,7 +40,9 @@ function App() {
               <div key={index} className="todo">
                 &bull; {todo}
               </div>
-              <div className="edit-btn">edit</div>
+              <button className="edit-btn" onClick={() => edithandler(index)}>
+                edit
+              </button>
             </div>
           ))}
       </div>
