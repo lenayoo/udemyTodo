@@ -1,9 +1,16 @@
-import { ChangeEvent, useState } from "react";
+import {
+  ChangeEvent,
+  DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES,
+  useState
+} from "react";
 import "./App.css";
 
 function App() {
   const [inputText, setInputText] = useState<string>("");
   const [todos, setTodos] = useState<string[]>([]);
+  const [editText, setEditText] = useState<string>("");
+  const [editIndex, setEditIndex] =
+    useState<DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES>();
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
@@ -17,9 +24,15 @@ function App() {
 
   const edithandler = (index: number) => {
     console.log("edit handler", index);
+    setEditText(todos[index]);
+    setEditIndex(index);
+    console.log("selected edit", editText, editIndex);
   };
 
-  console.log(todos);
+  const doneHandler = (editText: string) => {
+    setTodos((prevTodos) => [...prevTodos, editText]);
+  };
+  // console.log(todos);
   return (
     <>
       <h1>To do⛵️</h1>
@@ -37,9 +50,25 @@ function App() {
         {todos &&
           todos.map((todo, index) => (
             <div className="todoform">
-              <div key={index} className="todo">
-                &bull; {todo}
-              </div>
+              {editIndex === index ? (
+                <>
+                  <input
+                    value={editText}
+                    onChange={(e) => setEditText(e.target.value)}
+                  />
+                  <button
+                    className="edit-btn"
+                    onClick={() => doneHandler(editText)}
+                  >
+                    done
+                  </button>
+                </>
+              ) : (
+                <div key={index} className="todo">
+                  &bull; {todo}
+                </div>
+              )}
+
               <button className="edit-btn" onClick={() => edithandler(index)}>
                 edit
               </button>
