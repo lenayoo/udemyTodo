@@ -30,7 +30,14 @@ function App() {
   };
 
   const doneHandler = (editText: string) => {
-    setTodos((prevTodos) => [...prevTodos, editText]);
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos];
+      updatedTodos[editIndex as number] = editText;
+      return updatedTodos;
+    });
+
+    setEditIndex(undefined);
+    setEditText("");
   };
   // console.log(todos);
   return (
