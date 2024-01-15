@@ -1,16 +1,11 @@
-import {
-  ChangeEvent,
-  DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES,
-  useState
-} from "react";
+import { ChangeEvent, useState } from "react";
 import "./App.css";
 
 function App() {
   const [inputText, setInputText] = useState<string>("");
   const [todos, setTodos] = useState<string[]>([]);
   const [editText, setEditText] = useState<string>("");
-  const [editIndex, setEditIndex] =
-    useState<DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES>();
+  const [editIndex, setEditIndex] = useState<number>();
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
