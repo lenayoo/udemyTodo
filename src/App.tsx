@@ -29,6 +29,12 @@ function App() {
     console.log("selected edit", editText, editIndex);
   };
 
+  const deleteHandler = (index: number) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((_todo, i) => i !== index);
+    });
+  };
+
   const doneHandler = (editText: string) => {
     setTodos((prevTodos) => {
       const updatedTodos = [...prevTodos];
@@ -39,6 +45,7 @@ function App() {
     setEditIndex(undefined);
     setEditText("");
   };
+
   // console.log(todos);
   return (
     <>
@@ -75,9 +82,11 @@ function App() {
                   &bull; {todo}
                 </div>
               )}
-
               <button className="edit-btn" onClick={() => edithandler(index)}>
                 edit
+              </button>
+              <button className="edit-btn" onClick={() => deleteHandler(index)}>
+                delete
               </button>
             </div>
           ))}
